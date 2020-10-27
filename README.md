@@ -1,24 +1,11 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Create an idea for a project and gain backers to help reach your goal
 
-* Ruby version
+Payment via stripe
+Devise for user authentication
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ROR for backend
+Stimulus JS for dynamic user friendly actions
+Tailwind CSS for a sleek and simplistic design
