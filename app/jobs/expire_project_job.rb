@@ -7,6 +7,8 @@ class ExpireProjectJob < ApplicationJob
 
     @project.status = "inactive"
     @project.save!
+
+  
   end
 
 
