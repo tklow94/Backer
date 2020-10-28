@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
 
 
   def index
-    @projects = Project.all
+    @projects = Project.active
+    # use the scope  .inactive to show expired
   end
 
 
