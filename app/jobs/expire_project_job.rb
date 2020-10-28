@@ -8,7 +8,7 @@ class ExpireProjectJob < ApplicationJob
     @project.status = "inactive"
     @project.save!
 
-  
+    UserMailer.with(project: @project).project_expired_notice.deliver_later
   end
 
 
