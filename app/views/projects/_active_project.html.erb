@@ -3,7 +3,7 @@
     <div class="flex flex-wrap items-start justify-between w-full pb-4 mb-4 border-b-2 border-gray-200">
       <div class="flex-1">
         <h1 class="text-3xl font-bold leading-none text-gray-800"><%= project.title %></h1>
-        <p class="text-sm italic text-gray-500">Created by <%= project.user.first_name ||=
+        <p class="text-sm italic text-gray-500">Created by <%= project.user.name ||=
       project.user.username %></p>
       </div>
 
@@ -13,7 +13,7 @@
     </div>
 
     <div class="w-full mb-4 lg:w-1/5 lg:mb-0">
-      <p class="m-0 text-xl font-semibold leading-none"><%#= project.backings_count %></p>
+      <p class="m-0 text-xl font-semibold leading-none"><%= project.backings_count %></p>
       <p class="text-sm text-gray-500">backers</p>
     </div>
 
@@ -60,9 +60,11 @@
           <% if user_signed_in? && perk.project.user_id == current_user.id %>
             <em class="block text-sm text-center">Sorry, You can't back your own idea</em>
           <% else %>
-           
+           <% if purchased_perk(perk) %>
+              <p class="text-sm">You're already subscribed to this perk. <%= link_to "Manage your subscriptions in your account settings", edit_user_registration_path, class: "text-blue-500 underline" %>.</p>
+            <% else %>
              <%= link_to "Back this idea for #{number_to_currency(perk.amount)} /mo",  new_subscription_path(amount: perk.amount, project: project, plan: "#{perk.title.parameterize}-perk_#{perk.id}"), class: "btn btn-default btn-expanded" %>
-       
+            <% end %>
           <% end %>
         </div>
       <% end %>

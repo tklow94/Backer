@@ -6,7 +6,15 @@
 
     <%= render "devise/shared/error_messages", resource: resource %>
 
+    <div class="mb-6">
+      <%= f.label :username, class:"label" %>
+      <%= f.text_field :first_name, autofocus: true, class:"input" %>
+    </div>
 
+    <div class="mb-6">
+      <%= f.label :name, class:"label" %>
+      <%= f.text_field :first_name, class:"input" %>
+    </div>
 
     <div class="mb-6">
       <%= f.label :email, class:"label" %>
@@ -62,4 +70,21 @@
       <h4 class="mb-6 text-xl font-semibold leading-none text-gray-900">Successfully connected to Stripe 👍 ✅</h4>
     <% end %>
   </div>
+
+  <% if resource.subscribed? %>
+   <% customer = Stripe::Customer.retrieve(current_user.stripe_id) %>
+    <% if customer.subscriptions.any? %>
+    <div class="p-6 mt-10 text-gray-900 bg-white rounded shadow-lg">
+      <h4 class="font-bold text-gray-900">Active subscriptions</h4>
+      <ul>
+        <% customer.subscriptions.list.data.each do |sub| %>
+        <li class="flex items-center justify-between py-4 border-b">
+          <div><%= sub.plan.nickname %></div>
+          <%= link_to "Cancel Subscription", subscription_path(id: sub.id, plan_id: sub.plan.id), method: :delete, data: { confirm: "Are you sure?" } %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+   <% end %>
 </div>
