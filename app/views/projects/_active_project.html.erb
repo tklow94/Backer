@@ -3,8 +3,8 @@
     <div class="flex flex-wrap items-start justify-between w-full pb-4 mb-4 border-b-2 border-gray-200">
       <div class="flex-1">
         <h1 class="text-3xl font-bold leading-none text-gray-800"><%= project.title %></h1>
-        <p class="text-sm italic text-gray-500">Created by <%= project.user.name ||=
-      project.user.username %></p>
+        <p class="text-sm italic text-gray-500">Created by <%= project.user.first_name ||=
+      project.user.first_name %></p>
       </div>
 
     <div class="w-full mb-4 lg:w-1/5 lg:mb-0">
