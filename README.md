@@ -13,32 +13,31 @@ The main motivation for this project was to get used to reading the documentatio
 
 # Tehcnologies Used
 ---
-# - React Hooks
-  React Hooks makes it easier for me to extract and reuse code while maintaining a consistant use of functional components.
-# - React Router
-  React Router made redirects seamless for me, allowing redirects to pages without having to refresh the browser.
-# - Rails API
-  Using a Rails API gave me the ability to create an API only backend, so I could manipulate a virtual browser with React to decrease resource strain on the server.
-# - Active Model Serializer
-  Active Model Serializer made it easier for me to manipulate and extract data related to users, limiting the amount of code written on the frontend.
-# - Cloudinary
-  Cloudinary lessened the strain on my server. Instead of storing images on a local source, Cloudinary allowed me to store them in the cloud and retreive them when necessary.
-# - Material UI
-  Material UI was built for React. It has a large and fully customizable components. The main reason I used Material UI was because of the time constraint for this project. The large amount of ready out of the box components made design much quicker while still looking professional and feeling dynamic.
-# - Edamam API
-  Edamam API has one of the largest databases for recipes. It contains tons of information related to nutrition and allowed making a search component straightforward.
+# - Ruby on Rails
+  Ruby has newbie friendly syntax and was the only language I knew at the time. Rails is a development framework which makes abstracting out tasks much easier and allows me to DRY up my code.
+# - Postgresql
+  Postgresql is a program that allows me to easily create a relational database and view my data in clear and distinct tables.
+# - Stripe API
+  Leveraged the Stripe API so I could easily setup a marketplace where users can subscribe to and create projects, as well as monitor their marketplace with Stripe Connect.
+# - Tailwind CSS
+  Integrated TailWind CSS to achieve a seamless aesthetic using class based components.
+# - Stimulus JS
+  Implemented StimulusJS for a quick, lightweight, and dynamic interface.
+# - Active Jobs
+  Used to automate the mailer and automate connecting subscriptions to Stripe Connect.
+# - Devise and Bcyrpt
+  For an out of the box authentication and authorization of users, Devise was used. Bcrypt was used to help hide passwords.
+
 
 # Features
 ---
 - Create an account 
-- Search through database powered by Edamam API and user submissions to find recipes
-- Post Recipes
-- Upload images to your profile and to a post
-- Search for users and recipes by name
-- Follow users
-- Comment and reply on posts and comments
-- View Feed of followed user submissions
-- View your explore page to discover new recipes and new users
+- Connect your account to a Stripe Connect account to help manage and automate subscriptions
+- Create a project
+- Add subscription based perks to a project
+- Subscribe to other user projects
+- Automatic mailer sent out to the creator when project has reached it's deadline
+- Comment on projects
 
 # Contributing
 ---
